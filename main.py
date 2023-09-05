@@ -35,9 +35,9 @@ class PokeSpider(scrapy.Spider):
           'URL': url_evolucao
         })
 
-    url_habilidades = response.css('table.vitals-table > tbody > tr:nth-child(6) td a::attr(href)').getall()
+    url_habilidadess = response.css('table.vitals-table > tbody > tr:nth-child(6) td a::attr(href)').getall()
 
-    for url_habilidade in url_habilidades:
+    for url_habilidade in url_habilidadess:
       yield response.follow(url_habilidade,
                             self.parse_ability,
                             meta={
